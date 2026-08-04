@@ -36,7 +36,6 @@ void setup() {
 
 // The loop function runs over and over again forever
 void loop() {
-delay(1000)  // Wait 1 second each cycle
-Serial.print('Yippee');
+delay(1000);  // Wait 1 second each cycle
 }
 
