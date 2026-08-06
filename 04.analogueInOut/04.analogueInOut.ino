@@ -52,7 +52,18 @@ void setup() {
 }
 
 void loop() {
-  int value = analogRead(SOUND_PIN);
-  Serial.println(value);
-  delay(50);
+   analogWrite(LED_PIN, 0);
+  delay(1000);
+  analogWrite(LED_PIN, 64);    // 25 percent duty
+  delay(1000);
+  analogWrite(LED_PIN, 127);   // 50 percent duty
+  delay(1000);
+  analogWrite(LED_PIN, 255);   // always on
+  delay(1000);
+    tone(BUZZER_PIN, 262);   // middle C
+  delay(500);
+  tone(BUZZER_PIN, 523);   // C an octave up
+  delay(500);
+  noTone(BUZZER_PIN);      // silence
+  delay(500);
 }
