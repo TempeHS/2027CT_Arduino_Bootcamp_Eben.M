@@ -42,10 +42,7 @@ const long INTERVAL = 1000;
 int ledState = LOW;
 
 void setup() {
-  Serial.begin(115200);
-  for (int i = 0; i < 5; i++) {
-    Serial.println(random(1, 7));   // dice roll: 1 to 6
-  }
+
 }
 
 

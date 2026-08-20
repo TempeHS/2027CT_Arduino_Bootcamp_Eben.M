@@ -38,9 +38,30 @@ const int POT_PIN = A0;   // Grove Potentiometer on A0
 Servo myServo;
 
 void setup() {
-
+  myServo.attach(SERVO_PIN);   // servo signal on D3
+  myServo.write(90);           // move to the middle
 }
 
 void loop() {
-
+  myServo.write(200);
+  delay(1000);
+  myServo.write(45);
+  delay(1000);
+  myServo.write(135);
+  delay(1000);
+  myServo.write(180);
+  delay(1000);
+}
+void smoothMove(int fromAngle, int toAngle) {
+  if (fromAngle < toAngle) {
+    for (int a = fromAngle; a <= toAngle; a++) {
+      myServo.write(a);
+      delay(15);
+    }
+  } else {
+    for (int a = fromAngle; a >= toAngle; a--) {
+      myServo.write(a);
+      delay(15);
+    }
+  }
 }
